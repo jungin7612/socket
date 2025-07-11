@@ -18,7 +18,7 @@ def receive(sock):
 
 def main():
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    sock.connect(('192.168.1.233', 12345))  # 서버 IP 주소 및 포트
+    sock.connect(('172.24.87.46', 12345))  # 서버 IP 주소 및 포트
 
     # 닉네임 받기
     server_prompt = sock.recv(1024).decode()
