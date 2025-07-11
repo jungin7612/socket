@@ -2,6 +2,7 @@ import socket
 import threading
 import sys
 
+
 def receive(sock):
     while True:
         try:
@@ -14,9 +15,10 @@ def receive(sock):
             print("❌ 서버 연결이 끊어졌습니다.")
             break
 
+
 def main():
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    sock.connect(('127.0.0.1', 12345))  # 서버 IP 주소 및 포트
+    sock.connect(('192.168.1.233', 12345))  # 서버 IP 주소 및 포트
 
     # 닉네임 받기
     server_prompt = sock.recv(1024).decode()
@@ -37,6 +39,7 @@ def main():
             print("\n👋 클라이언트를 종료합니다.")
             sock.close()
             break
+
 
 if __name__ == "__main__":
     main()
